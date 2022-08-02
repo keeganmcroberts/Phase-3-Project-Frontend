@@ -22,7 +22,7 @@ function Login() {
             />
         </form>
         <h2>Don't Have An Account?</h2>
-        <button>Register</button>
+        <button id="regButton">Register</button>
     </>
     )
 }
