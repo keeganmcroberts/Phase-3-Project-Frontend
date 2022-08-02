@@ -1,9 +1,6 @@
 function EditExpense () {
 
-    return (
-
-
-    )
+    return 
 }
 
 export default ExpenseInput;

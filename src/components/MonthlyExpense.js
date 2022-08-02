@@ -1,7 +1,5 @@
 function MonthlyExpense () {
-return (
-
-    )
+return 
 }
 
 export default MonthlyExpense;
