@@ -23,6 +23,25 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.main_element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.app_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.app_footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 .App-link {
   color: #61dafb;

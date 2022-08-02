@@ -9,8 +9,6 @@ return (
             <p>Money saving tip</p>
     </div>
 
-
-
     )
 }
 
