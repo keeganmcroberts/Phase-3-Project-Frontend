@@ -8,7 +8,9 @@ function App() {
 
   useEffect(()=>{
     console.log("hello sam")
-    fetch("http://localhost:9292/user")
+    fetch("http://localhost:9292/users")
+    // fetch("http://localhost:9292/categories")
+    // fetch("http://localhost:9292/expenses")
     .then (res => res.json())
     .then(console.log)
   }, [])
