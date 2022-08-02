@@ -1,6 +1,6 @@
 function EditExpense () {
     return (
-        <form>
+        <form className="editExpenseClass">
             <h1>Edit Expense Here</h1>
             <input
             type="text"
@@ -9,7 +9,6 @@ function EditExpense () {
             />
             
         </form>
-        
     )
 }
 
