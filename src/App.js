@@ -2,6 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from 'react';
 import MonthlyExpense from './components/MonthlyExpense';
+import Login from './components/Login';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import MainContainer from './components/MainContainer';
+
+
+
 
 function App() {
   const [users, setUsers] = useState([])
@@ -15,14 +22,14 @@ function App() {
 
 
     return (
-      // <Container>
-      //   <Header className="appHeader"/>
+      <div className="appContainerClass">
+        <Header className="appHeader"/>
         <div className="app">
-          {/* <Login/>
-          <MainContainer/> */}
+          {/* <Login className="appLogin"/> this will need a 'home' route  */}
+          <MainContainer className ="mainContainer"/>
         </div>
-        // <Footer className="appFooter"/>
-      // </Container>
+        <Footer className="appFooter"/>
+      </div>
     )
 
 
