@@ -28,7 +28,6 @@ function Login() {
                 <button>Register</button>
             </div>
         </form>
-        
     </>
     )
 }
