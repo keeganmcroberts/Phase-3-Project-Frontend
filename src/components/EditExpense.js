@@ -1,6 +1,12 @@
 function EditExpense () {
 
-    return 
+    return (
+        <div className="editExpenseClass">
+
+
+
+        </div>
+    )
 }
 
-export default ExpenseInput;
+export default EditExpense;
