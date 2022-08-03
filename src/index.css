@@ -31,6 +31,32 @@ code {
  
  
 }
+.editExpenseClass {
+  position: absolute;
+  width: 500px;
+  height: fixed;
+  z-index: 15;
+  top: 40%;
+  left: 41%;
+  margin: -100px 0 0 -150px;
+  background: rgb(204, 221, 219);
+  text-align: center;
+ 
+ 
+}
+.editBudgetCard {
+  position: absolute;
+  width: 500px;
+  height: fixed;
+  z-index: 15;
+  top: 40%;
+  left: 41%;
+  margin: -100px 0 0 -150px;
+  background: rgb(204, 221, 219);
+  text-align: center;
+ 
+ 
+}
 
 .main-footer {
   position: absolute;
@@ -42,7 +68,7 @@ code {
   text-align: center;
 }
 
-/* .monthlyExpenseCard h3, h4, h2, h1 {
-  text-align: center;
-  border: 3px solid green;
-} */
+*{
+  margin: 0;
+  padding: 0;
+}

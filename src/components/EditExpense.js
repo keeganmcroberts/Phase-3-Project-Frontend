@@ -1,8 +1,11 @@
 import {useState} from "react";
 
-function EditExpense () {
+function EditExpense ({setDisplayState}) {
     return (
         <div className="editExpenseClass">
+            <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
+            <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
+            <button className="navButton3" >Logout</button>
              <h2>New Expense</h2> 
                     <form>
                         <input
