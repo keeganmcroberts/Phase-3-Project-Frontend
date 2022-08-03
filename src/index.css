@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.expenseGraph {
+  width: 200px;
+  height: 120px;
+  margin: 3px;
+  padding: 3px;
+}
+.monthlyExpenseCard {
+  position: absolute;
+  width: 500px;
+  height: fixed;
+  z-index: 15;
+  top: 40%;
+  left: 41%;
+  margin: -100px 0 0 -150px;
+  background: rgb(204, 221, 219);
+  text-align: center;
+ 
+ 
+}
+
+.main-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(187, 230, 239);
+  color: white;
+  text-align: center;
+}
+
+/* .monthlyExpenseCard h3, h4, h2, h1 {
+  text-align: center;
+  border: 3px solid green;
+} */
