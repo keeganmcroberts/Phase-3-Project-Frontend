@@ -5,12 +5,16 @@ import {useState, useEffect} from "react";
 
 function MainContainer(){
 const [expenses, setNewExpenses] = useState([])
+const [allExpenses, setAllExpenses] = useState([])
 
 
 useEffect(() => {
     fetch('http://localhost:9292/expenses')
     .then(res=>res.json())
-    .then(data=>{setNewExpenses(data)})
+    .then(data=>{
+        setNewExpenses(data)
+        setAllExpenses(data)
+})
 }, [])
 
     function receiveNewExpense(newExpense) {
@@ -22,15 +26,19 @@ useEffect(() => {
         setNewExpenses([newExpense, ...expenses])
     }
 
-    // function receiveExpenseToRemove(removeExpense)
-    //     fetch("http://localhost:9292/expenses", {
-    //         method: 'DELETE'
-    //     })
-
+    function receiveExpenseToRemove(searchValue) {
+        let resultOfSearch = allExpenses.filter(
+            (eachExpense) => {
+                if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
+                return (eachExpense)
+            })
+        setAllExpenses(resultOfSearch)
+    }
+       
 
     return (
         <div className="mainContainerClass">
-            <EditExpense receiveNewExpense={receiveNewExpense} />
+            <EditExpense receiveNewExpense={receiveNewExpense} receiveExpenseToRemove={receiveExpenseToRemove} />
             <MonthlyExpense/>
         </div>
     )
