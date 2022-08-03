@@ -7,12 +7,16 @@ import EditBudget from "./EditBudget";
 function MainContainer(){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
 const [expenses, setNewExpenses] = useState([])
+const [allExpenses, setAllExpenses] = useState([])
 
 
 useEffect(() => {
     fetch('http://localhost:9292/expenses')
     .then(res=>res.json())
-    .then(data=>{setNewExpenses(data)})
+    .then(data=>{
+        setNewExpenses(data)
+        setAllExpenses(data)
+})
 }, [])
 
     function receiveNewExpense(newExpense) {
@@ -24,17 +28,23 @@ useEffect(() => {
         setNewExpenses([newExpense, ...expenses])
     }
 
-    // function receiveExpenseToRemove(removeExpense)
-    //     fetch("http://localhost:9292/expenses", {
-    //         method: 'DELETE'
-    //     })
-
+    function receiveExpenseToRemove(searchValue) {
+        let resultOfSearch = allExpenses.filter(
+            (eachExpense) => {
+                if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
+                return (eachExpense)
+            })
+        setAllExpenses(resultOfSearch)
+    }
+       
 
     return (
         <div className="mainContainerClass">
             {displayState === "editExpense" ? <EditExpense receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
+            <EditExpense receiveNewExpense={receiveNewExpense} receiveExpenseToRemove={receiveExpenseToRemove} />
+            <MonthlyExpense/>
         </div>
     )
 }
