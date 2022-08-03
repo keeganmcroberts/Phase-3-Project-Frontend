@@ -1,13 +1,17 @@
 import {useState} from "react";
-
-function EditExpense ({receiveNewExpense}) {
+function EditExpense ({receiveNewExpense, setDisplayState}) {
 const [priceInput, setPriceInput] = useState("")
 const [categoryInput, setCategoryInput] = useState("")
 const [nameInput, setNameInput] = useState("")
 const [dateInput, setDateInput] = useState("")
 
+
+
     return (
         <div className="editExpenseClass">
+            <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
+            <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
+            <button className="navButton3" >Logout</button>
              <h2>New Expense</h2> 
                     <form
                         onSubmit={(e)=>{

@@ -1,9 +1,11 @@
 import EditExpense from "./EditExpense";
 import MonthlyExpense from "./MonthlyExpense";
 import {useState, useEffect} from "react";
+import EditBudget from "./EditBudget";
 
 
 function MainContainer(){
+const [displayState, setDisplayState] = useState("monthlyExpenses")
 const [expenses, setNewExpenses] = useState([])
 
 
@@ -30,8 +32,9 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
-            <EditExpense receiveNewExpense={receiveNewExpense} />
-            <MonthlyExpense/>
+            {displayState === "editExpense" ? <EditExpense receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
+            {displayState === "monthlyExpenses" ? <MonthlyExpense setDisplayState={setDisplayState}/> : null}
+            {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
         </div>
     )
 }
