@@ -1,7 +1,6 @@
 import {useState} from "react";
 
 function EditExpense () {
-
     return (
         <div className="editExpenseClass">
              <h2>New Expense</h2> 
