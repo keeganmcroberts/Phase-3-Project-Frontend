@@ -11,7 +11,7 @@ function receiveNewBudget(newBudget) {
     fetch(`http://localhost:9292/${currentUser.id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify()
+        body: JSON.stringify(newBudget)
     }) 
     setBudgetState(newBudget)
 }
@@ -29,7 +29,7 @@ function receiveNewBudget(newBudget) {
                 <form className="inputIncome" onSubmit={((event) => {
                     event.preventDefault()
                     let newBudget = {
-                        budget: budgetState
+                        salary: budgetState
                         }
                     receiveNewBudget(newBudget)})}>
                     <input 

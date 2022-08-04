@@ -40,7 +40,7 @@ return (
             <br/>
             <div></div>
             <h3>Compare Monthly Expenses (graph goes where Kurt is)</h3>
-            {<ExpenseGraph/>}
+            <ExpenseGraph/>
             <br/>
             <br/>
             <h4>Daily Money Saving Tip Here</h4>
