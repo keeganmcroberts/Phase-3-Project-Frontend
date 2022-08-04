@@ -54,7 +54,7 @@ useEffect(() => {
         <div className="mainContainerClass">
             {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
-            {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
+            {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }
         </div>
     )
 }
