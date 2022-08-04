@@ -1,5 +1,5 @@
 import {useState} from "react";
-function EditExpense ({receiveNewExpense, setDisplayState}) {
+function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue}) {
 const [priceInput, setPriceInput] = useState("")
 const [categoryInput, setCategoryInput] = useState("")
 const [nameInput, setNameInput] = useState("")
@@ -23,6 +23,7 @@ const [dateInput, setDateInput] = useState("")
                             amount: priceInput,
                             category_name: categoryInput,
                             date: dateInput,
+                            name: nameInput,
                         }
                         receiveNewExpense(newExpense)
                         }}>
@@ -60,12 +61,8 @@ const [dateInput, setDateInput] = useState("")
                             <option value="clothes">Clothes</option>
                             <option value="vacation">Vacation</option>
                             <option value="gas">Gas</option>
-                            <option value="doctorBill">Doctor Bill</option>
-                            <option value="waterBill">Water Bill</option>
-                            <option value="powerBill">Power Bill</option>
-                            <option value="internetBill">Internet Bill</option>
-                            <option value="phoneBill">Phone Bill</option>
-                            
+                            <option value="bills">Bills</option>
+
                         </select> 
                         <input
                         type="submit"
@@ -82,8 +79,8 @@ const [dateInput, setDateInput] = useState("")
                     <input 
                     className="searchBar"
                     type="text"
-                    placeholder="Search by Category..."
-                    // onChange={(synthEvent)=> handleingtheSearch(synthEvent.target.value)}
+                    placeholder="Search by Name..."
+                    onChange={(e)=> receiveSearchValue(e.target.value)}
                     />
                 </div>
                 <button id="removeButton">Remove</button>
