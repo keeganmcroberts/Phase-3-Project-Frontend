@@ -58,6 +58,18 @@ code {
  
 }
 
+.loginForm {
+  position: absolute;
+  width: 500px;
+  height: fixed;
+  z-index: 15;
+  top: 40%;
+  left: 41%;
+  margin: -100px 0 0 -150px;
+  background: rgb(204, 221, 219);
+  text-align: center;
+}
+
 .main-footer {
   position: absolute;
   left: 0;
