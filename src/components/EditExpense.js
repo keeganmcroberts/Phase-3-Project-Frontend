@@ -18,7 +18,7 @@ const [dateInput, setDateInput] = useState("")
                             e.preventDefault()
                         let newExpense = {
                             amount: priceInput,
-                            category_id: categoryInput,
+                            category_name: categoryInput,
                             date: dateInput,
                         }
                         receiveNewExpense(newExpense)

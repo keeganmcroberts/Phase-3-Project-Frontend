@@ -40,11 +40,9 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
-            {displayState === "editExpense" ? <EditExpense receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
+            {displayState === "editExpense" ? <EditExpense receiveExpenseToRemove={receiveExpenseToRemove} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
-            <EditExpense receiveNewExpense={receiveNewExpense} receiveExpenseToRemove={receiveExpenseToRemove} />
-            <MonthlyExpense/>
         </div>
     )
 }
