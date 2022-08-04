@@ -6,7 +6,7 @@ import EditBudget from "./EditBudget";
 
 function MainContainer({users, logout, currentUser}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
-const [expenses, setNewExpenses] = useState([])
+const [newExpenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
 
 
@@ -25,15 +25,15 @@ useEffect(() => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newExpense)
         })
-        setNewExpenses([newExpense, ...expenses])
+        setNewExpenses([newExpense, ...newExpenses])
     }
 
-    function receiveSearchValue(searchValue) {
-        let resultOfSearch = currentUser.expenses.filter((eachExpense) => {
+    function receiveSearchValue(searchValue) {  
+        let resultOfSearch = currentUser.expenses.map((eachExpense) => {
                 if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
                 return (eachExpense)
             })
-            console.log("result of search" ,resultOfSearch)
+            console.log("result of search", resultOfSearch)
         setAllExpenses(resultOfSearch)
     }
 
