@@ -8,6 +8,7 @@ function MainContainer({users, logout}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
 const [expenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
+const [searchBar, setSearchBar] = useState([])
 
 
 useEffect(() => {
@@ -15,7 +16,7 @@ useEffect(() => {
     .then(res=>res.json())
     .then(data=>{
         setNewExpenses(data)
-        setAllExpenses(data)
+        setAllExpenses(console.log)
 })
 }, [])
 
@@ -28,37 +29,17 @@ useEffect(() => {
         setNewExpenses([newExpense, ...expenses])
     }
 
-    function receiveExpenseToRemove(searchValue) {
-        let resultOfSearch = allExpenses.filter(
-            (eachExpense) => {
+    function receiveSearchValue(searchValue) {
+        let resultOfSearch = allExpenses.filter((eachExpense) => {
                 if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
                 return (eachExpense)
             })
         setAllExpenses(resultOfSearch)
     }
-       
-
-    // function handleingtheSearch(searchBarInput){
-    //     let resultofSearch= "state".filter((whatItype)=> {
-    //       if(whatItype."data".toLowerCase().includes(searchBarInput.toLowerCase())){
-    //         return whatItype
-    //       }else if (whatItype."data".toLowerCase().includes(searchBarInput.toLowerCase())){
-    //         return whatItype
-    //       }
-    //     })
-    //     "setState"(resultofSearch)
-    
-    //   }
-
-
-
-
-
-
 
     return (
         <div className="mainContainerClass">
-            {displayState === "editExpense" ? <EditExpense receiveExpenseToRemove={receiveExpenseToRemove} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
+            {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
         </div>
