@@ -57,6 +57,11 @@ code {
  
  
 }
+.homePageExpenseList {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: left;
+}
 
 .loginForm {
   position: absolute;

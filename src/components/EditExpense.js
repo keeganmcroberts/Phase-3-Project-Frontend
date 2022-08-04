@@ -1,5 +1,9 @@
 import {useState, useEffect} from "react";
-function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue, currentUser}) {
+
+import {Link} from "react-router-dom"
+
+function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue, currentUser, handleRemoveClick, logout}) {
+
 const [priceInput, setPriceInput] = useState("")
 const [categoryInput, setCategoryInput] = useState("")
 const [nameInput, setNameInput] = useState("")
@@ -21,11 +25,13 @@ const [currentUserExpenses, setCurrentUserExpenses] = useState([])
   
 
 console.log("Loggedin",currentUser)
+
+
     return (
         <div className="editExpenseClass">
             <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
-            <button className="navButton3" >Logout</button>
+            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
             <br/>
             <br/>
             <br/>
@@ -96,8 +102,8 @@ console.log("Loggedin",currentUser)
                     placeholder="Search by Name..."
                     onChange={(e)=> receiveSearchValue(e.target.value)}
                     />
+                    <button id="removeButton" onClick={(e)=>{handleRemoveClick()}}>Remove</button>
                 </div>
-                <button id="removeButton">Remove</button>
         </div>
     )
 }

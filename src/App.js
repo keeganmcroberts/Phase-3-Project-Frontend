@@ -20,8 +20,12 @@ function App() {
   console.log("User Logged in:", userToLogin)
   console.log("logged in status:", loggedInStatus) 
   console.log("state of expenses:", expenses ) 
+<<<<<<< HEAD
   console.log("state of current user: ", currentUser)
 
+=======
+  console.log("user expenses!!!!!:", currentUser.expenses)
+>>>>>>> main
 
   useEffect( ()=>{
     fetch("http://localhost:9292/users")
@@ -85,9 +89,9 @@ function App() {
         <Header className="appHeader"/>
         <div className="app">
           <Routes>
+            <Route path="/home" element={<MainContainer currentUser={currentUser} logout={logout} users={users} className ="mainContainer"/>}></Route>
             <Route path="/login" element={<Login className="appLogin" handleUsernameLogin={handleUsernameLogin} handlePasswordLogin={handlePasswordLogin} userToLogin={userToLogin} handleSubmit={handleSubmit}/>}></Route>
    
-            <Route path="/home" element={<MainContainer currentUser={currentUser} logout={logout} users={users} className ="mainContainer"/>}></Route>
           </Routes>
         </div>
         <Footer className="appFooter"/>
