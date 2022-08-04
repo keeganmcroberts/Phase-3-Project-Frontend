@@ -1,9 +1,15 @@
 import {useState} from "react";
-function EditExpense ({receiveNewExpense, setDisplayState}) {
-const [priceInput, setPriceInput] = useState("")
-const [categoryInput, setCategoryInput] = useState("")
-const [nameInput, setNameInput] = useState("")
-const [dateInput, setDateInput] = useState("")
+import {Link} from "react-router-dom"
+
+
+
+
+function EditExpense ({receiveNewExpense, setDisplayState, logout}) {
+    const [priceInput, setPriceInput] = useState("")
+    const [categoryInput, setCategoryInput] = useState("")
+    const [nameInput, setNameInput] = useState("")
+    const [dateInput, setDateInput] = useState("")
+
 
 
 
@@ -11,7 +17,7 @@ const [dateInput, setDateInput] = useState("")
         <div className="editExpenseClass">
             <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
-            <button className="navButton3" >Logout</button>
+            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
             <br/>
             <br/>
             <br/>

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import {Link} from "react-router-dom"
 
 
-function EditBudget({setDisplayState}){
+function EditBudget({setDisplayState, logout}){
  const [budgetState, setBudgetState] = useState("")
 
 
@@ -12,8 +13,8 @@ function EditBudget({setDisplayState}){
     <div className="editBudgetBackground">
         <div className="editBudgetCard">
             <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
-            <button className="navButton2" onClick={()=>setDisplayState("editExpense")}>Add Expenses</button>
-            <button className="navButton3" >Logout</button>
+            <button className="navButton2" onClick={()=>setDisplayState("editExpense")}>Add/Remove Expenses</button>
+            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
             <h2>Edit Budget Here</h2>
                 <br/>
                 <br/>
