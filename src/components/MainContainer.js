@@ -25,7 +25,9 @@ useEffect(() => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newExpense)
+
         }) 
+
         setNewExpenses([newExpense, ...newExpenses])
     }
     
@@ -52,7 +54,11 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
+<<<<<<< HEAD
+            {displayState === "editExpense" ? <EditExpense currentUser={currentUser} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
+=======
             {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
+>>>>>>> main
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }
         </div>

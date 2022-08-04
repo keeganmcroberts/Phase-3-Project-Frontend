@@ -20,7 +20,11 @@ function App() {
   console.log("User Logged in:", userToLogin)
   console.log("logged in status:", loggedInStatus) 
   console.log("state of expenses:", expenses ) 
+
+  console.log("state of current user: ", currentUser)
+
   console.log("user expenses!!!!!:", currentUser.expenses)
+
 
   useEffect( ()=>{
     fetch("http://localhost:9292/users")
