@@ -1,9 +1,13 @@
 import { useState } from "react";
+import ExpensesForMonth from "./ExpensesForMonth";
+import ExpensesForWeek from "./ExpensesForWeek";
+import { Routes, Route } from "react-router-dom";
+import Login from "./Login";
+import {Link} from "react-router-dom"
 
-
-function MonthlyExpense ({setDisplayState}) {
-const [weeklyExpenseListState, setWeeklyExpenseListState] = useState(true)
-const [monthlyExpenseListState, setMonthlyExpenseListState] = useState(true)
+function MonthlyExpense ({setDisplayState, users, logout}) {
+const [weeklyExpenseListState, setWeeklyExpenseListState] = useState(false)
+const [monthlyExpenseListState, setMonthlyExpenseListState] = useState(false)
 
 function ToggleMonthlyExpense() {
     setMonthlyExpenseListState(!monthlyExpenseListState)
@@ -18,16 +22,15 @@ return (
         <div className="monthlyExpenseCard">
             <button className="navButton1" onClick={()=>setDisplayState("editExpense")}>Add Expenses</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
-            <button className="navButton3" >Logout</button>
+            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
             <h2>Welcome User!</h2>
             <br/>
             <br/>
             <h3>Toggle Weekly/Monthly Expenses</h3>
-            <button onClick={ToggleWeeklyExpense}>Weekly Expenses</button>(Put toggle function on these) <button onClick={ToggleMonthlyExpense}>Monthly Expenses</button>
-            <div>↓Some Component with data Goes Below↓</div>
-            {/* {weeklyExpenseListState ? "some component with expense list from data" : null} 
-            {monthlyExpenseListState ? "some component with monthly expense list from data" : null}   */}
-            <br/>
+            <button onClick={ToggleWeeklyExpense}>Weekly Expenses</button> <button onClick={ToggleMonthlyExpense}>Monthly Expenses</button>
+            {weeklyExpenseListState ? <ExpensesForWeek users={users}/> : null} 
+            {monthlyExpenseListState ? <ExpensesForMonth/> : null}  
+            <br/> 
             <br/>
             <br/>
             <br/>

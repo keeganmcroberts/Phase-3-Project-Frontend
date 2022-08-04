@@ -12,6 +12,9 @@ const [dateInput, setDateInput] = useState("")
             <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
             <button className="navButton3" >Logout</button>
+            <br/>
+            <br/>
+            <br/>
              <h2>New Expense</h2> 
                     <form
                         onSubmit={(e)=>{
@@ -71,14 +74,16 @@ const [dateInput, setDateInput] = useState("")
                         id="saveButton"
                         />
                     </form>
-
+            <br/>
+            <br/>
+            <br/>
             <h2>Edit Expense</h2>
                 <div className="expenseSearchBar">
                     <input 
                     className="searchBar"
-                    name="searchBar"
-                    placeholder="Search"
-                    // onChange={(e)=>{receiveExpenseToRemove(e.target.value)}}
+                    type="text"
+                    placeholder="Search by Category..."
+                    // onChange={(synthEvent)=> handleingtheSearch(synthEvent.target.value)}
                     />
                 </div>
                 <button id="removeButton">Remove</button>
