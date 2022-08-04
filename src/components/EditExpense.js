@@ -1,12 +1,26 @@
-import {useState} from "react";
-function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue}) {
+import {useState, useEffect} from "react";
+function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue, currentUser}) {
 const [priceInput, setPriceInput] = useState("")
 const [categoryInput, setCategoryInput] = useState("")
 const [nameInput, setNameInput] = useState("")
 const [dateInput, setDateInput] = useState("")
+const [currentUserExpenses, setCurrentUserExpenses] = useState([])
 
 
+    useEffect( ()=>{
+            if(currentUser.id){
+                fetch(`http://localhost:9292/my_expenses/${currentUser.id}`)
+                .then (res => res.json())
+                .then(fetchedUserExpenses =>{ console.log(fetchedUserExpenses)
+                    setCurrentUserExpenses( fetchedUserExpenses )
+                })
+            }else console.log("No ones logged in")
+            
+        }, 
+    [])
+  
 
+console.log("Loggedin",currentUser)
     return (
         <div className="editExpenseClass">
             <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>

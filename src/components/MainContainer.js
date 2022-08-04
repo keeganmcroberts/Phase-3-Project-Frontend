@@ -6,7 +6,7 @@ import EditBudget from "./EditBudget";
 
 function MainContainer({users, logout, currentUser}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
-const [expenses, setNewExpenses] = useState([])
+const [newExpenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
 
 
@@ -25,7 +25,7 @@ useEffect(() => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newExpense)
         })
-        setNewExpenses([newExpense, ...expenses])
+        setNewExpenses([newExpense, ...newExpenses])
     }
 
     function receiveSearchValue(searchValue) {
@@ -39,7 +39,7 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
-            {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
+            {displayState === "editExpense" ? <EditExpense currentUser={currentUser} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
         </div>

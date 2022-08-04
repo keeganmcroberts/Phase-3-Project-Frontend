@@ -13,13 +13,15 @@ function App() {
   const [users, setUsers] = useState([])
   const [userToLogin, setUserToLogin] = useState({username:"", password:""})
   const [loggedInStatus, setLoggedInStatus] = useState(false)
-  const [currentUser, SetCurrentUser] = useState({})
+  const [currentUser, SetCurrentUser] = useState({expenses:[]})
   const [expenses, setExpenses] = useState([])
 
   console.log("State of Our Users: ", users)
   console.log("User Logged in:", userToLogin)
   console.log("logged in status:", loggedInStatus) 
   console.log("state of expenses:", expenses ) 
+  console.log("state of current user: ", currentUser)
+
 
   useEffect( ()=>{
     fetch("http://localhost:9292/users")
