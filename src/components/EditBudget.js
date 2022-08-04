@@ -15,6 +15,9 @@ function EditBudget({setDisplayState}){
             <button className="navButton2" onClick={()=>setDisplayState("editExpense")}>Add Expenses</button>
             <button className="navButton3" >Logout</button>
             <h2>Edit Budget Here</h2>
+                <br/>
+                <br/>
+                <br/>
                 <form className="inputIncome" onSubmit={((event) => {
                     event.preventDefault() })}>
 
@@ -25,6 +28,9 @@ function EditBudget({setDisplayState}){
                     onChange={(event)=> setBudgetState(event.target.value)}/>
                 <br/>
                 <h4>Save Changes?</h4>
+                <br/>
+                <br/>
+                <br/>
                 <button type="submit" id="saveButton">Save</button>         <button id="cancelButton">Cancel</button>
                 </form>
                 
