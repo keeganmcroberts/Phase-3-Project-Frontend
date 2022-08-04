@@ -8,7 +8,6 @@ function MainContainer({users, logout, currentUser}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
 const [expenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
-const [searchBar, setSearchBar] = useState([])
 
 
 useEffect(() => {
@@ -16,7 +15,7 @@ useEffect(() => {
     .then(res=>res.json())
     .then(data=>{
         setNewExpenses(data)
-        setAllExpenses(console.log)
+        setAllExpenses(data)
 })
 }, [])
 
@@ -30,10 +29,11 @@ useEffect(() => {
     }
 
     function receiveSearchValue(searchValue) {
-        let resultOfSearch = allExpenses.filter((eachExpense) => {
+        let resultOfSearch = currentUser.expenses.filter((eachExpense) => {
                 if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
                 return (eachExpense)
             })
+            console.log("result of search" ,resultOfSearch)
         setAllExpenses(resultOfSearch)
     }
 
