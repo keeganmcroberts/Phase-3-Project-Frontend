@@ -4,7 +4,7 @@ import {useState, useEffect} from "react";
 import EditBudget from "./EditBudget";
 
 
-function MainContainer({users, logout}){
+function MainContainer({users, logout, currentUser}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
 const [expenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
@@ -40,7 +40,7 @@ useEffect(() => {
     return (
         <div className="mainContainerClass">
             {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
-            {displayState === "monthlyExpenses" ? <MonthlyExpense logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
+            {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
         </div>
     )

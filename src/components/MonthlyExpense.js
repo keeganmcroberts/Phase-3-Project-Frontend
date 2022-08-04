@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import {Link} from "react-router-dom"
 
-function MonthlyExpense ({setDisplayState, users, logout}) {
+function MonthlyExpense ({setDisplayState, users, logout, currentUser}) {
 const [weeklyExpenseListState, setWeeklyExpenseListState] = useState(false)
 const [monthlyExpenseListState, setMonthlyExpenseListState] = useState(false)
 
@@ -26,10 +26,10 @@ return (
             <h2>Welcome User!</h2>
             <br/>
             <br/>
-            <h3>Toggle Weekly/Monthly Expenses</h3>
-            <button onClick={ToggleWeeklyExpense}>Weekly Expenses</button> <button onClick={ToggleMonthlyExpense}>Monthly Expenses</button>
+            <h3>View Expenses Here</h3>
+             <button onClick={ToggleMonthlyExpense}>Monthly Expenses</button>
             {weeklyExpenseListState ? <ExpensesForWeek users={users}/> : null} 
-            {monthlyExpenseListState ? <ExpensesForMonth/> : null}  
+            {monthlyExpenseListState ? <ExpensesForMonth currentUser={currentUser}/> : null}  
             <br/> 
             <br/>
             <br/>
