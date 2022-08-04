@@ -1,5 +1,6 @@
 import {useState} from "react";
-function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue}) {
+
+function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue, handleRemoveClick}) {
 const [priceInput, setPriceInput] = useState("")
 const [categoryInput, setCategoryInput] = useState("")
 const [nameInput, setNameInput] = useState("")
@@ -82,8 +83,8 @@ const [dateInput, setDateInput] = useState("")
                     placeholder="Search by Name..."
                     onChange={(e)=> receiveSearchValue(e.target.value)}
                     />
+                    <button id="removeButton" onClick={(e)=>{handleRemoveClick()}}>Remove</button>
                 </div>
-                <button id="removeButton">Remove</button>
         </div>
     )
 }
