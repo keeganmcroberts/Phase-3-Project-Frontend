@@ -1,12 +1,17 @@
 import { useState } from "react";
 
 
-function EditBudget({setDisplayState}){
+function EditBudget({setDisplayState, currentUser}){
  const [budgetState, setBudgetState] = useState("")
 
-
-
-
+function receiveNewBudget(newBudget) {
+    fetch(`http://localhost:9292/${currentUser.id}`, {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify()
+    }) 
+    setBudgetState(newBudget)
+}
 
  return (
     <div className="editBudgetBackground">
@@ -19,8 +24,11 @@ function EditBudget({setDisplayState}){
                 <br/>
                 <br/>
                 <form className="inputIncome" onSubmit={((event) => {
-                    event.preventDefault() })}>
-
+                    event.preventDefault()
+                    let newBudget = {
+                        budget: budgetState
+                        }
+                    receiveNewBudget(newBudget)})}>
                     <input 
                     className="incomeInput"
                     placeholder="Monthly Budget: $$$"
