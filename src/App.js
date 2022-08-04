@@ -14,17 +14,27 @@ function App() {
   const [userToLogin, setUserToLogin] = useState({username:"", password:""})
   const [loggedInStatus, setLoggedInStatus] = useState(false)
   const [currentUser, SetCurrentUser] = useState({})
+  const [expenses, setExpenses] = useState([])
+
   console.log("State of Our Users: ", users)
   console.log("User Logged in:", userToLogin)
-  console.log("logged in status:", loggedInStatus)
+  console.log("logged in status:", loggedInStatus) 
+  console.log("state of expenses:", expenses ) 
 
   useEffect( ()=>{
     fetch("http://localhost:9292/users")
-    // fetch("http://localhost:9292/categories")
-    // fetch("http://localhost:9292/expenses")
     .then (res => res.json())
     .then(fetchedUsers =>{ console.log(fetchedUsers)
       setUsers( fetchedUsers )
+    })
+  }, [])
+
+
+  useEffect( ()=>{
+    fetch("http://localhost:9292/allExpenses")
+    .then (res => res.json())
+    .then(fetchedExpenses =>{ console.log("fetched expenses:", fetchedExpenses)
+      setExpenses( fetchedExpenses )
     })
   }, [])
   
@@ -54,7 +64,7 @@ function App() {
    };
 
    function logout(){
-     setLoggedInStatus(!loggedInStatus)
+     setLoggedInStatus(false)
    }
   
 
@@ -75,7 +85,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login className="appLogin" handleUsernameLogin={handleUsernameLogin} handlePasswordLogin={handlePasswordLogin} userToLogin={userToLogin} handleSubmit={handleSubmit}/>}></Route>
    
-            <Route path="/home" element={<MainContainer logout={logout} users={users} className ="mainContainer"/>}></Route>
+            <Route path="/home" element={<MainContainer currentUser={currentUser} logout={logout} users={users} className ="mainContainer"/>}></Route>
           </Routes>
         </div>
         <Footer className="appFooter"/>
