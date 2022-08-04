@@ -1,14 +1,12 @@
 import {useState} from "react";
+
 import {Link} from "react-router-dom"
 
-
-
-
-function EditExpense ({receiveNewExpense, setDisplayState, logout}) {
-    const [priceInput, setPriceInput] = useState("")
-    const [categoryInput, setCategoryInput] = useState("")
-    const [nameInput, setNameInput] = useState("")
-    const [dateInput, setDateInput] = useState("")
+function EditExpense ({receiveNewExpense, setDisplayState, receiveSearchValue, handleRemoveClick, logout}) {
+const [priceInput, setPriceInput] = useState("")
+const [categoryInput, setCategoryInput] = useState("")
+const [nameInput, setNameInput] = useState("")
+const [dateInput, setDateInput] = useState("")
 
 
 
@@ -29,6 +27,7 @@ function EditExpense ({receiveNewExpense, setDisplayState, logout}) {
                             amount: priceInput,
                             category_name: categoryInput,
                             date: dateInput,
+                            name: nameInput,
                         }
                         receiveNewExpense(newExpense)
                         }}>
@@ -66,12 +65,8 @@ function EditExpense ({receiveNewExpense, setDisplayState, logout}) {
                             <option value="clothes">Clothes</option>
                             <option value="vacation">Vacation</option>
                             <option value="gas">Gas</option>
-                            <option value="doctorBill">Doctor Bill</option>
-                            <option value="waterBill">Water Bill</option>
-                            <option value="powerBill">Power Bill</option>
-                            <option value="internetBill">Internet Bill</option>
-                            <option value="phoneBill">Phone Bill</option>
-                            
+                            <option value="bills">Bills</option>
+
                         </select> 
                         <input
                         type="submit"
@@ -88,11 +83,11 @@ function EditExpense ({receiveNewExpense, setDisplayState, logout}) {
                     <input 
                     className="searchBar"
                     type="text"
-                    placeholder="Search by Category..."
-                    // onChange={(synthEvent)=> handleingtheSearch(synthEvent.target.value)}
+                    placeholder="Search by Name..."
+                    onChange={(e)=> receiveSearchValue(e.target.value)}
                     />
+                    <button id="removeButton" onClick={(e)=>{handleRemoveClick()}}>Remove</button>
                 </div>
-                <button id="removeButton">Remove</button>
         </div>
     )
 }

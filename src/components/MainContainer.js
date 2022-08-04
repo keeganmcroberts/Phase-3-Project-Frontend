@@ -6,9 +6,10 @@ import EditBudget from "./EditBudget";
 
 function MainContainer({users, logout, currentUser}){
 const [displayState, setDisplayState] = useState("monthlyExpenses")
-const [expenses, setNewExpenses] = useState([])
+const [newExpenses, setNewExpenses] = useState([])
 const [allExpenses, setAllExpenses] = useState([])
 
+console.log("currentUser", currentUser)
 
 useEffect(() => {
     fetch('http://localhost:9292/expenses')
@@ -24,43 +25,36 @@ useEffect(() => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newExpense)
-        })
-        setNewExpenses([newExpense, ...expenses])
+        }) 
+        setNewExpenses([newExpense, ...newExpenses])
     }
+    
 
-    function receiveExpenseToRemove(searchValue) {
-        let resultOfSearch = allExpenses.filter(
-            (eachExpense) => {
-                if (eachExpense.name.toLowerCase().includes(searchValue.toLowerCase()))
+    function receiveSearchValue(searchValue) {  
+        
+        let resultOfSearch = currentUser.expenses.filter((eachExpense) => {
+                if (eachExpense.expense_name.toLowerCase().includes(searchValue.toLowerCase()))
                 return (eachExpense)
             })
+            console.log("result of search", resultOfSearch)
         setAllExpenses(resultOfSearch)
     }
-       
 
-    // function handleingtheSearch(searchBarInput){
-    //     let resultofSearch= "state".filter((whatItype)=> {
-    //       if(whatItype."data".toLowerCase().includes(searchBarInput.toLowerCase())){
-    //         return whatItype
-    //       }else if (whatItype."data".toLowerCase().includes(searchBarInput.toLowerCase())){
-    //         return whatItype
-    //       }
-    //     })
-    //     "setState"(resultofSearch)
-    
+    console.log(currentUser.expenses, "hi")
+
+    // function handleRemoveClick() {
+    //     fetch(`http://localhost:9292/expenses/${id}`, {
+    //       method: "DELETE",
+    //     });
     //   }
 
-
-
-
-
-
+    // handleRemoveClick={handleRemoveClick}
 
     return (
         <div className="mainContainerClass">
-            {displayState === "editExpense" ? <EditExpense receiveExpenseToRemove={receiveExpenseToRemove} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
+            {displayState === "editExpense" ? <EditExpense receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState}/> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
-            {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState}/> : null }
+            {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }
         </div>
     )
 }
