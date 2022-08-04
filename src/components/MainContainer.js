@@ -25,11 +25,9 @@ useEffect(() => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newExpense)
-<<<<<<< HEAD
-        })
-=======
+
         }) 
->>>>>>> main
+
         setNewExpenses([newExpense, ...newExpenses])
     }
     
