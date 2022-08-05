@@ -57,7 +57,8 @@ function MonthlyExpense({ setDisplayState, users, logout, currentUser }) {
                 {<ExpenseGraph />}
                 <br />
                 <br />
-                <h4>Daily Money Saving Tip Here</h4>
+                {/* <h4>It's not how much money you make, but how much money you keep, how hard it works for you, and how many generations you keep it for.</h4> */}
+                <h4>The goal is not more money. The goal is living life on your terms.</h4>
 
 
 

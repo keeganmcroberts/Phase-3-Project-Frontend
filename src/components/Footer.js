@@ -1,10 +1,7 @@
 function Footer() {
     return (
-        <div className="main-footer">
-            <h3 >By: Caroline McDonald,</h3>
-            <h3 >Iris Gonzalez,</h3>
-            <h3 > & Keegan McRoberts</h3>
-            
+        <div>
+            <h4 className="appFooter">By: Caroline McDonald, Iris Gonzalez, & Keegan McRoberts</h4>
         </div>
     )
 }

@@ -1,11 +1,11 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -26,7 +26,7 @@ code {
   cursor: pointer;
   text-align: center;
   margin: auto;
-  
+
   /* box-shadow: 3px 3px 3px; */
 }
 
@@ -42,11 +42,11 @@ code {
 
 form {
   display: flex;
-  width: 300px;  
-  height: 200px;  
-  border: 2px solid #b2a6a4;  
+  width: 300px;
+  height: 200px;
+  border: 2px solid #b2a6a4;
   text-align: center;
-  display: grid; 
+  display: grid;
   margin: auto;
 }
 
@@ -86,6 +86,7 @@ form {
   padding: 4px 28px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .submit_button:hover {
@@ -110,7 +111,7 @@ form {
 }
 
 #saveButton:hover {
-  
+
   background-color: #b2a6a4;
   color: black;
 }
@@ -127,7 +128,7 @@ form {
   margin-bottom: 15px;
   cursor: pointer;
   justify-content: center;
-  
+
 }
 
 #cancelButton:hover {
@@ -145,33 +146,33 @@ form {
 
 .monthlyExpenseCard {
   /* display: flex; */
-  /* align-self: center; */
+  align-self: center;
   width: 500px;
-  height: fixed;
+  /* height: fixed; */
   z-index: 15;
-  top: 40%;
-  left: 41%;
-  margin: -100px 0 0 -150px;
-  background: rgb(204, 221, 219);
+  left: 30%;
   text-align: center;
-  /* justify-content: space-around; */
   background-color: #f9ffff;
   border-radius: 19px;
   width: 800px;
+  position: absolute;
+  background: #f9fffc;
+  padding-bottom: 5px;
 
 }
 
 .editExpenseClass {
   position: absolute;
-  width: 500px;
   height: fixed;
   z-index: 15;
-  top: 40%;
-  left: 41%;
-  margin: -100px 0 0 -150px;
+  left: 30%;
   background: #f9fffc;
   text-align: center;
+  border-radius: 19px;  
+  align-self: center;
+  background-color: #f9ffff;
   border-radius: 19px;
+  width: 800px;
 }
 
 
@@ -182,18 +183,17 @@ form {
 }
 
 .editBudgetCard {
-  /* position: absolute; */
-  display: flex;
-  width: 500px;
   height: 525px;
-  z-index: 15;
-  top: 40%;
-  left: 41%;
-  margin: -100px 0 0 -150px;
   background: #f9fffc;
+  align-self: center;
+  height: fixed;
+  z-index: 15;
+  left: 30%;
   text-align: center;
+  background-color: #f9ffff;
   border-radius: 19px;
-
+  width: 800px;
+  position: absolute;
 }
 
 .homePageExpenseList {
@@ -226,21 +226,16 @@ form {
   cursor: text;
   margin-bottom: 25px;
 }
-.main-footer {
-  /* position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(187, 230, 239);
-  color: white;*/
-  position: relative;
-  text-align: center; 
+
+.appFooter {
+  height:20px;
   color: white;
-  background-color: #09035b;
-  padding-top: 1em;
-  bottom: 0;
-  left: 0;
+  background-color: #b2a6a4;
   width: 100%;
-  
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  position: fixed;
 }
 
 
