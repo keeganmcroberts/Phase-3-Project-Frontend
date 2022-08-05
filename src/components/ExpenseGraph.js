@@ -15,7 +15,9 @@ const ExpenseGraph = () => {
     <div className="pieChart">
       <VictoryPie
         data={myData}
-        colorScale={["blue", "yellow", "red", "green", "orange", "purple"]}
+
+        colorScale={["#a4a1e7", "#81c2fc","#7fe2ff", "#96feff"]}
+
         radius={60}
       />
     </div>

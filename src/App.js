@@ -85,7 +85,7 @@ function App() {
   }
 
     return (
-      <div className="appContainerClass">
+      <div>
         <Header className="appHeader"/>
         <div className="app">
           <Routes>

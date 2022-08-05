@@ -1,5 +1,6 @@
 html{
   background-color: #d1e6d6;
+  /* border: 1px solid red; */
 }
 
 .headerClass {
@@ -56,40 +57,19 @@ h4{
   color: #575455;
 }
 
+/* .banner-text {
+  color: #f9ffff;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+} */
+
 .loginCard{
   background-color: #f9ffff;
   border-radius: 19px;
 }
 
-.username_entry {
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
 
-.password_entry {
-  display: flex;
-  flex-wrap: wrap;
-
-  border-radius: 5px;
-  flex-direction: column;
-  justify-content: space-between;
-  /* margin: 45px; */
-  row-gap: 10px;
-  column-gap: 2em;
-  text-align:center;
-
-}
-
-.main-footer{
-  position:absolute;
-   bottom:0;
-   width:100%;
-   height:60px;   /* Height of the footer */
-   background:#6cf;
-}
 
 
 #menu__toggle {
@@ -147,6 +127,7 @@ h4{
   padding: 80px 0;
   list-style: none;
   background-color: #ECEFF1;
+  opacity: 80%;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
   transition-duration: .25s;
 }
