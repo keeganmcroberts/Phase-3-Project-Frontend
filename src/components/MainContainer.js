@@ -65,7 +65,11 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
+<<<<<<< HEAD
             {displayState === "editExpense" ? <EditExpense key={currentUser.id} currentUser={currentUser} handleRemoveClick={handleRemoveClick} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
+=======
+            {displayState === "editExpense" ? <EditExpense currentUser={currentUser} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
+>>>>>>> 751bcd332ca588ea77e12913696dfa285d282baa
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }
         </div>
