@@ -2,10 +2,12 @@ import React from "react";
 import { VictoryPie } from "victory-pie";
 
 const myData = [
-  { x: "Bills", y: 900 },
+  { x: "Bills", y: 300 },
   { x: "Food", y: 400 },
   { x: "Gas", y: 300 },
-  { x: "Clothes", y: 300}
+  { x: "Clothes", y: 300},
+  { x: "Rent", y: 900},
+  { x: "Vacation", y: 300},
 ];
 
 const ExpenseGraph = () => {
@@ -13,7 +15,9 @@ const ExpenseGraph = () => {
     <div className="pieChart">
       <VictoryPie
         data={myData}
+
         colorScale={["#a4a1e7", "#81c2fc","#7fe2ff", "#96feff"]}
+
         radius={60}
       />
     </div>
