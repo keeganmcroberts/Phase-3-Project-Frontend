@@ -29,13 +29,27 @@ console.log("Loggedin",currentUser)
 
     return (
         <div className="editExpenseClass">
-            <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
+              <div class="hamburger-menu">
+                    <input id="menu__toggle" type="checkbox" />
+                    <label class="menu__btn" for="menu__toggle">
+                        <span></span>
+                    </label>
+
+                    <ul class="menu__box">
+                        <li><a className="navButton1" onClick={() => setDisplayState("monthlyExpenses")}>Home</a></li>
+                        <li><a className="navButton1" onClick={()=>setDisplayState("editBudget")}>Edit Budget</a></li>
+                        <li><Link onClick={logout} className="logoutLink" to="/login">Logout</Link>
+                        </li>
+
+                    </ul>
+                </div>
+               
+            {/* <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
-            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
-            <br/>
-            <br/>
-            <br/>
+            <Link onClick={logout} className="logoutLink" to="/login">Logout</Link>  */}
              <h2>New Expense</h2> 
+            <br/>
+
                     <form
                         onSubmit={(e)=>{
                             e.preventDefault()
@@ -47,28 +61,28 @@ console.log("Loggedin",currentUser)
                         }
                         receiveNewExpense(newExpense)
                         }}>
-                        <input
+                        <input className="input_form"
                         type="text"
                         name="date"
                         placeholder="Date"
                         value={dateInput}
                         onChange={(e)=>{setDateInput(e.target.value)}}
                         />
-                        <input
+                        <input className="input_form"
                         type="text"
                         name="expense"
                         placeholder="Price"
                         value={priceInput}
                         onChange={(e)=>{setPriceInput(e.target.value)}}
                         />
-                        <input
+                        <input className="input_form"
                         type="text"
                         name="nameOfExpense"
                         placeholder="Name"
                         value={nameInput}
                         onChange={(e)=>{setNameInput(e.target.value)}}
                         />
-                        <select 
+                        <select id="categories"
                         type="text"
                         name="category"
                         placeholder="Category"
@@ -84,13 +98,14 @@ console.log("Loggedin",currentUser)
                             <option value="bills">Bills</option>
 
                         </select> 
+                        </form>
                         <input
                         type="submit"
                         name="submit"
                         value="Save"
-                        id="saveButton"
+                        id="saveExpenseButton"
                         />
-                    </form>
+                   
             <br/>
             <br/>
             <br/>
@@ -102,8 +117,23 @@ console.log("Loggedin",currentUser)
                     placeholder="Search by Name..."
                     onChange={(e)=> receiveSearchValue(e.target.value)}
                     />
-                    <button id="removeButton" onClick={(e)=>{handleRemoveClick()}}>Remove</button>
+                
                 </div>
+                <div >
+                    {currentUser.expenses.map((eachExpense)=>{
+                return(
+                <div key={currentUser.id} className="homePageExpenseList">
+                    <h3>{eachExpense.expense_name}</h3>
+                    <h4>Date: {eachExpense.date}</h4> 
+                    <h4>Amount: ${eachExpense.amount}</h4>
+                    <button className="button" onClick={(e)=>{handleRemoveClick(eachExpense)}}>Remove</button>
+                    
+                </div>
+                )
+})}
+
+
+</div>
         </div>
     )
 }
