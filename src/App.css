@@ -14,17 +14,21 @@ html{
   color: #575455;
   font-size: 65px;
 }
-
-.App {
+/* .banner-text {
+  color: #f9ffff;
   text-align: center;
-}
+  position: fixed;
+  bottom: 0px;
+} */
 
-.App-logo {
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-
+} */
 
 /* .App-header {
   background-color: #282c34;
@@ -57,19 +61,10 @@ h4{
   color: #575455;
 }
 
-/* .banner-text {
-  color: #f9ffff;
-  text-align: center;
-  position: fixed;
-  bottom: 0px;
-} */
-
 .loginCard{
   background-color: #f9ffff;
   border-radius: 19px;
 }
-
-
 
 
 #menu__toggle {

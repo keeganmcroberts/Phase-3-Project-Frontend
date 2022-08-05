@@ -34,7 +34,7 @@ function Login({handleUsernameLogin, handlePasswordLogin, userToLogin, handleSub
                 value="Submit"
                 />
                 <h2>Don't Have An Account?</h2>
-                <button className="reg_button">Register</button>
+                <h5>Register</h5>
             </div>
         </form>
     </>

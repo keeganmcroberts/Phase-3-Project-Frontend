@@ -35,7 +35,7 @@ code {
   color: black;
 }
 
-.reg_button {
+h5{
   color: #865df0;
   text-decoration: none;
 }
@@ -156,7 +156,6 @@ form {
   border-radius: 19px;
   width: 800px;
   position: absolute;
-  background: #f9fffc;
   padding-bottom: 5px;
 
 }
@@ -204,14 +203,27 @@ form {
 
 .loginForm {
   position: absolute;
-  width: 500px;
-  height: fixed;
+  /* height: fixed; */
   z-index: 15;
-  top: 40%;
-  left: 41%;
+  left: 30%;
   margin: -100px 0 0 -150px;
   background: rgb(204, 221, 219);
   text-align: center;
+  border-radius: 19px;
+  width: 800px;
+  padding-bottom: 5px;
+}
+
+.loginCard {
+  position: absolute;
+  z-index: 15;
+  left: 35%;
+  margin: -100px 0 0 -150px;
+  background: rgb(204, 221, 219);
+  text-align: center;
+  border-radius: 19px;
+  width: 800px;
+  padding-bottom: 5px;
 }
 
 .searchBar {
