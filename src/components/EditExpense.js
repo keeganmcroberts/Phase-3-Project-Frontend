@@ -47,7 +47,7 @@ console.log("Loggedin",currentUser)
             {/* <button className="navButton1" onClick={()=>setDisplayState("monthlyExpenses")}>Home</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
             <Link onClick={logout} className="logoutLink" to="/login">Logout</Link>  */}
-             <h2>New Expense</h2> 
+             <h2>New Investment</h2> 
             <br/>
 
                     <form
@@ -111,7 +111,7 @@ console.log("Loggedin",currentUser)
             <br/>
             <br/>
             <br/>
-            <h2>Edit Expense</h2>
+            <h2>Edit Investment</h2>
                 <div className="expenseSearchBar">
                     <input 
                     className="searchBar"
