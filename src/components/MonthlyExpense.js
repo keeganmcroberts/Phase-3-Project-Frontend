@@ -32,7 +32,7 @@ function MonthlyExpense({ setDisplayState, users, logout, currentUser }) {
                         <li><a className="navButton1" onClick={() => setDisplayState("editBudget")}>Edit Budget</a></li>
                         {/* <li><a class="menu__item" href="#">Logout</a></li> */}
                         <li><Link onClick={logout} className="logoutLink" to="/login">Logout</Link>
-</li>
+                        </li>
                         
                     </ul>
                 </div>
