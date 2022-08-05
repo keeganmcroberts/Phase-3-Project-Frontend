@@ -21,6 +21,7 @@ useEffect(() => {
 }, [])
 
     function receiveNewExpense(newExpense) {
+        console.log("new expense:", newExpense)
         fetch("http://localhost:9292/expenses", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -28,7 +29,7 @@ useEffect(() => {
 
         }) 
 
-        setNewExpenses([newExpense, ...newExpenses])
+        setAllExpenses([newExpense, ...allExpenses])
     }
     
 
@@ -65,9 +66,7 @@ useEffect(() => {
 
     return (
         <div className="mainContainerClass">
-
-            {displayState === "editExpense" ? <EditExpense key={currentUser.id} currentUser={currentUser} handleRemoveClick={handleRemoveClick} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
-
+            {displayState === "editExpense" ? <EditExpense currentUser={currentUser} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }
         </div>
