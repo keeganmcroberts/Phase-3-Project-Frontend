@@ -21,6 +21,20 @@ function ToggleWeeklyExpense(){
 return (
     <div className="monthlyExpenseCardBackground">
         <div className="monthlyExpenseCard">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                <span></span>
+                </label>
+
+                <ul class="menu__box">
+                <li><a className="navButton1" onClick={()=>setDisplayState("editExpense")}>Add/Remove Expenses</a></li>
+                <li><a  className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</a></li>
+                <li><a class="menu__item" href="#">Team</a></li>
+                <li><a class="menu__item" href="#">Contact</a></li>
+                <li><a class="menu__item" href="#">Twitter</a></li>
+                    </ul>
+                </div>
             <button className="navButton1" onClick={()=>setDisplayState("editExpense")}>Add/Remove Expenses</button>
             <button className="navButton2" onClick={()=>setDisplayState("editBudget")}>Edit Budget</button>
             <Link onClick={logout} className="logoutLink" to="/login">Logout</Link> 
@@ -39,8 +53,8 @@ return (
             <br/>
             <br/>
             <div></div>
-            <h3>Compare Monthly Expenses (graph goes where Kurt is)</h3>
-            {<ExpenseGraph/>}
+            <h3>Budget Breakdown</h3>
+            <ExpenseGraph/>
             <br/>
             <br/>
             <h4>Daily Money Saving Tip Here</h4>

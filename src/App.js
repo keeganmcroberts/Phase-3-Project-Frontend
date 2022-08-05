@@ -13,7 +13,7 @@ function App() {
   const [users, setUsers] = useState([])
   const [userToLogin, setUserToLogin] = useState({username:"", password:""})
   const [loggedInStatus, setLoggedInStatus] = useState(false)
-  const [currentUser, SetCurrentUser] = useState({expenses:[]})
+  const [currentUser, SetCurrentUser] = useState({})
   const [expenses, setExpenses] = useState([])
 
   console.log("State of Our Users: ", users)
