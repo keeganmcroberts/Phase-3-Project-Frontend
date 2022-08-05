@@ -15,6 +15,7 @@ const ExpenseGraph = () => {
         data={myData}
         colorScale={["#a4a1e7", "#81c2fc","#7fe2ff", "#96feff"]}
         radius={60}
+        height={180}
       />
     </div>
   );

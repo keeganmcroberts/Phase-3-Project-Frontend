@@ -37,12 +37,10 @@ function MonthlyExpense({ setDisplayState, users, logout, currentUser }) {
                     </ul>
                 </div>
                
-                <Link onClick={logout} className="logoutLink" to="/login">Logout</Link>
-                <h2>Welcome User!</h2>
+
+                <h2>{ `Welcome ${currentUser.first_name}!`}</h2>
                 <br />
-                <br />
-                <h3>View Expenses Here</h3>
-                <button className="button" onClick={ToggleMonthlyExpense}>Monthly Expenses</button>
+                <button className="button" onClick={ToggleMonthlyExpense}>Monthly Wealth Investments</button>
                 {weeklyExpenseListState ? <ExpensesForWeek users={users} /> : null}
                 {monthlyExpenseListState ? <ExpensesForMonth key={currentUser.id} currentUser={currentUser} /> : null}
                 <br />
@@ -53,7 +51,7 @@ function MonthlyExpense({ setDisplayState, users, logout, currentUser }) {
                 <br />
                 <br />
                 <div></div>
-                <h3>Compare Monthly Expenses</h3>
+                <h3>Your Personalized Monthly Money Habits</h3>
                 {<ExpenseGraph />}
                 <br />
                 <br />
