@@ -24,15 +24,14 @@ const myData = [
 
 function ExpensesForMonth({currentUser}){
     return(
-        <div >
+        <div key={currentUser.id}>
 
         {currentUser.expenses.map((eachExpense)=>{
             return(
-            <div className="homePageExpenseList">
+            <div key={currentUser.id} className="homePageExpenseList">
                 <h3>{eachExpense.expense_name}</h3>
                 <h4>Date: {eachExpense.date}</h4> 
                 <h4>Amount: ${eachExpense.amount}</h4>
-                
                 
             </div>
             )
