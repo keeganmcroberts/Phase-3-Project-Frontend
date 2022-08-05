@@ -12,7 +12,7 @@ function Login({handleUsernameLogin, handlePasswordLogin, userToLogin, handleSub
             
             <div className="loginCard">
             <h1>Login</h1>
-                
+                <div className="entry">
                 <input className="username_entry"
                 onChange={handleUsernameLogin}
                 value={userToLogin.username}
@@ -27,6 +27,7 @@ function Login({handleUsernameLogin, handlePasswordLogin, userToLogin, handleSub
                 name="password"
                 placeholder="Password"
                 />
+                </div>
                 <input className="submit_button"
                 type="submit"
                 name="submit"
