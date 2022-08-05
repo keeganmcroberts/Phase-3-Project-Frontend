@@ -41,21 +41,6 @@ function EditBudget({ setDisplayState, currentUser, logout }) {
                     event.preventDefault()
                     let newBudget = {
                         salary: budgetState
-<<<<<<< HEAD
-                        }
-                    receiveNewBudget(newBudget)})}>
-                    <input 
-                    className="incomeInput"
-                    placeholder="Monthly Budget: $$$"
-                    value={budgetState} 
-                    onChange={(event)=> setBudgetState(event.target.value)}/>
-                <br/>
-                <h4>Save Changes?</h4>
-                <br/>
-                <br/>
-                <br/>
-                <button type="submit" id="saveButton">Save</button>         <button id="cancelButton">Cancel</button>
-=======
                     }
                     receiveNewBudget(newBudget)
                 })}>
@@ -63,7 +48,6 @@ function EditBudget({ setDisplayState, currentUser, logout }) {
                         placeholder="Monthly Budget: $$$"
                         value={budgetState}
                         onChange={(event) => setBudgetState(event.target.value)} />
->>>>>>> 0a18433d0dd81bf82b347949926a7c72d4b21a03
                 </form>
                     <h3>Save Changes?</h3>
                     <br />
