@@ -45,18 +45,29 @@ useEffect(() => {
 
     console.log(currentUser.expenses, "hi")
 
-    // function handleRemoveClick() {
-    //     fetch(`http://localhost:9292/expenses/${id}`, {
-    //       method: "DELETE",
-    //     });
-    //   }
+    function handleRemoveClick(eachExpense) {
+        fetch(`http://localhost:9292/my_expenses/${eachExpense.id}`, {
+          method: "DELETE",
+        })
+        .then((r) => r.json())
+        .then((data)=> 
+        console.log("Its been deleted!", data)
+        )
 
-    // handleRemoveClick={handleRemoveClick}
+        let resultOfFilter = allExpenses.filter( (eachExpenseObj)=> {
+            if( eachExpenseObj.id !== eachExpense.id){
+                return eachExpenseObj
+            }
+        })
+        setAllExpenses( [...resultOfFilter])
+      }
+
+    
 
     return (
         <div className="mainContainerClass">
 
-            {displayState === "editExpense" ? <EditExpense currentUser={currentUser} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
+            {displayState === "editExpense" ? <EditExpense key={currentUser.id} currentUser={currentUser} handleRemoveClick={handleRemoveClick} receiveSearchValue={receiveSearchValue} receiveNewExpense={receiveNewExpense} setDisplayState={setDisplayState} /> : null}
 
             {displayState === "monthlyExpenses" ? <MonthlyExpense currentUser={currentUser} logout={logout} users={users} setDisplayState={setDisplayState}/> : null}
             {displayState === "editBudget" ? <EditBudget setDisplayState={setDisplayState} currentUser={currentUser}/> : null }

@@ -12,14 +12,140 @@ code {
     monospace;
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  display: grid;
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 30px;
+  background-color: #b2a6a4;
+  color: white;
+  padding: 4px 28px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+  
+  /* box-shadow: 3px 3px 3px; */
+}
+
+.button:hover {
+  background-color: #b2a6a4;
+  color: black;
+}
+
+.reg_button {
+  color: #865df0;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  width: 300px;  
+  height: 200px;  
+  border: 2px solid #b2a6a4;  
+  text-align: center;
+  display: grid; 
+  margin: auto;
+}
+
+.inputIncome {
+  /* border-radius: 40px; */
+  /* .input_form{ */
+  font-size: 19px;
+  text-align: center;
+}
+
+#saveExpenseButton {
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 40px;
+  background-color: #b2a6a4;
+  font-size: 19px;
+  align-items: center;
+  color: white;
+  padding: 4px 28px;
+  cursor: pointer;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+#saveExpenseButton:hover {
+  background-color: #b2a6a4;
+  color: black;
+}
+
+.submit_button {
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 40px;
+  background-color: white;
+  color: black;
+  padding: 4px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit_button:hover {
+  background-color: #b2a6a4;
+  color: white;
+}
+
+#saveButton {
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 40px;
+  background-color: #b2a6a4;
+  font-size: 19px;
+  align-items: center;
+  color: white;
+  padding: 4px 28px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+  cursor: pointer;
+  justify-content: center;
+
+}
+
+#saveButton:hover {
+  
+  background-color: #b2a6a4;
+  color: black;
+}
+
+#cancelButton {
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 30px;
+  background-color: #b2a6a4;
+  font-size: 19px;
+  align-items: center;
+  color: white;
+  padding: 4px 28px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  justify-content: center;
+  
+}
+
+#cancelButton:hover {
+  background-color: #b2a6a4;
+  color: black;
+
+}
+
 .expenseGraph {
   width: 200px;
   height: 120px;
   margin: 3px;
   padding: 3px;
 }
+
 .monthlyExpenseCard {
-  position: absolute;
+  /* display: flex; */
+  /* align-self: center; */
   width: 500px;
   height: fixed;
   z-index: 15;
@@ -28,9 +154,13 @@ code {
   margin: -100px 0 0 -150px;
   background: rgb(204, 221, 219);
   text-align: center;
- 
- 
+  /* justify-content: space-around; */
+  background-color: #f9ffff;
+  border-radius: 19px;
+  width: 800px;
+
 }
+
 .editExpenseClass {
   position: absolute;
   width: 500px;
@@ -39,24 +169,32 @@ code {
   top: 40%;
   left: 41%;
   margin: -100px 0 0 -150px;
-  background: rgb(204, 221, 219);
+  background: #f9fffc;
   text-align: center;
- 
- 
+  border-radius: 19px;
 }
+
+
+
+#categories {
+  text-align: center;
+  font-size: 17px;
+}
+
 .editBudgetCard {
   position: absolute;
   width: 500px;
-  height: fixed;
+  height: 525px;
   z-index: 15;
   top: 40%;
   left: 41%;
   margin: -100px 0 0 -150px;
-  background: rgb(204, 221, 219);
+  background: #f9fffc;
   text-align: center;
- 
- 
+  border-radius: 19px;
+
 }
+
 .homePageExpenseList {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -75,16 +213,36 @@ code {
   text-align: center;
 }
 
+.searchBar {
+  border: 2px solid #b2a6a4;
+  border-width: 3px;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+  padding: 4px 28px;
+  font-size: 18px;
+  text-align: center;
+  cursor: text;
+  margin-bottom: 25px;
+}
 .main-footer {
-  position: absolute;
-  left: 0;
+  /* position: absolute;
   bottom: 0;
   width: 100%;
   background-color: rgb(187, 230, 239);
+  color: white;*/
+  position: relative;
+  text-align: center; 
   color: white;
-  text-align: center;
+  background-color: #09035b;
+  padding-top: 1em;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
 }
 
+<<<<<<< HEAD
 *{
   margin: 0;
   padding: 0;
@@ -161,3 +319,9 @@ code {
 .menu__item:hover {
   background-color: #CFD8DC;
 }
+
+* {
+  /* margin: 0; */
+  /* padding: 0; */
+}
+
