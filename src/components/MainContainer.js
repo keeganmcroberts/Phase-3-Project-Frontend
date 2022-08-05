@@ -21,6 +21,7 @@ useEffect(() => {
 }, [])
 
     function receiveNewExpense(newExpense) {
+        console.log("new expense:", newExpense)
         fetch("http://localhost:9292/expenses", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -28,7 +29,7 @@ useEffect(() => {
 
         }) 
 
-        setNewExpenses([newExpense, ...newExpenses])
+        setAllExpenses([newExpense, ...allExpenses])
     }
     
 

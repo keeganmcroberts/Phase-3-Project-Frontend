@@ -1,26 +1,7 @@
 import { VictoryPie } from "victory-pie";
 import React from "react";
 
-const myData = [
-    { x: "Group A", y: 900 },
-    { x: "Group B", y: 400 },
-    { x: "Group C", y: 300 },
-  ];
   
-  const App = () => {
-    return (
-      <div>
-        <VictoryPie
-          data={myData}
-          colorScale={["blue", "yellow", "red"]}
-          radius={100}
-        />
-      </div>
-    );
-  };
-  
-
-
 
 function ExpensesForMonth({currentUser}){
     return(

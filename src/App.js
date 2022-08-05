@@ -24,6 +24,7 @@ function App() {
   console.log("state of current user: ", currentUser)
 
   console.log("user expenses!!!!!:", currentUser.expenses)
+  // console.log("user Salary!!!!!:" currentUser.salary)
 
 
   useEffect( ()=>{

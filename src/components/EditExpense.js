@@ -44,6 +44,8 @@ console.log("Loggedin",currentUser)
                             category_name: categoryInput,
                             date: dateInput,
                             name: nameInput,
+                            user_id: currentUser.id
+
                         }
                         receiveNewExpense(newExpense)
                         }}>
