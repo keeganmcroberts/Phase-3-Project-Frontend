@@ -182,7 +182,8 @@ form {
 }
 
 .editBudgetCard {
-  position: absolute;
+  /* position: absolute; */
+  display: flex;
   width: 500px;
   height: 525px;
   z-index: 15;
@@ -241,6 +242,7 @@ form {
   width: 100%;
   
 }
+
 
 * {
   /* margin: 0; */
